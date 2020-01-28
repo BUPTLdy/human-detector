@@ -52,7 +52,7 @@ def detector(filename):
             if im_window.shape[0] != min_wdw_sz[1] or im_window.shape[1] != min_wdw_sz[0]:
                 continue
             im_window = color.rgb2gray(im_window)
-            fd = hog(im_window, orientations, pixels_per_cell, cells_per_block, visualize, normalize)
+            fd = hog(im_window, orientations, pixels_per_cell, cells_per_block)
 
             fd = fd.reshape(1, -1)
             pred = clf.predict(fd)
